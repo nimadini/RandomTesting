@@ -4,6 +4,7 @@ RANDOOP_DIR="randoop"
 RANDOOP_JAR="randoop-all-3.0.3.jar"
 TIME="30"
 OUTPUT_DIR="rgts"
+TESTS_PER_FILE="50"
 
 rm -f RegressionTest*.java
 
@@ -22,4 +23,4 @@ fi
 	cp "build/libs/${RANDOOP_JAR}" ..
 )
 
-java -classpath "${RANDOOP_JAR}" randoop.main.Main gentests --classlist=classes.txt --timelimit="${TIME}" --junit-output-dir="${OUTPUT_DIR}"
+java -classpath "${RANDOOP_JAR}" randoop.main.Main gentests --classlist=classes.txt --timelimit="${TIME}" --junit-output-dir="${OUTPUT_DIR}" --testsperfile="${TESTS_PER_FILE}"
